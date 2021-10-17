@@ -19,4 +19,25 @@ class GildedRoseTest {
             () -> assertEquals(0, app.items[0].quality)
         );
     }
+
+    @Test
+    void should_MaxAt50_WhenBackstagePassesRipen() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Backstage passes to a TAFKAL80ETC concert", 11, GildedRose.MAX_QUALITY),
+            new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertAll(
+            () -> assertEquals(GildedRose.MAX_QUALITY, app.items[0].quality),
+            () -> assertEquals(GildedRose.MAX_QUALITY, app.items[1].quality),
+            () -> assertEquals(GildedRose.MAX_QUALITY, app.items[2].quality)
+        );
+    }
 }
