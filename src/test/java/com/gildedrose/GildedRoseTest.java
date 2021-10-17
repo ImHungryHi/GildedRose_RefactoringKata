@@ -63,4 +63,23 @@ class GildedRoseTest {
             () -> assertEquals(2, app.items[3].quality)
         );
     }
+
+    @Test
+    void should_MaxAt50_WhenAgedBrieRipens() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Aged Brie", 2, 50),
+            new Item("Aged Brie", -1, 49)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertAll(
+            () -> assertEquals(GildedRose.MAX_QUALITY, app.items[0].quality),
+            () -> assertEquals(GildedRose.MAX_QUALITY, app.items[1].quality)
+        );
+    }
 }
