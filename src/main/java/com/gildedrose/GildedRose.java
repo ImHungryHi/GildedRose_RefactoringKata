@@ -23,7 +23,7 @@ class GildedRose {
     //  - [Aged Brie] -> increment quality if it drops below 50, once if sellIns are >= 0, twice otherwise
     //  - [Backstage passes] -> reset quality to 0 if sellIn is negative, else increment twice if quality
     //       is under 50 and sellIn is less than 11, once more when sellIn is 5 or less
-    //  - [Sulfuras] -> don't decrement sellIn, increment quality by 1 if under 50
+    //  - [Sulfuras] -> don't decrement sellIn
     //  - Everything else -> decrement quality by 1 if >= 0, once more if sellIn is negative
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
