@@ -26,6 +26,7 @@ Whichever testing approach you choose, the idea of the exercise is to do some de
 ### Gilded Rose Requirements in other languages
 
 - [English](GildedRoseRequirements.txt)
+
 *Chris' note: there were other languages here, for which I will refer to [emilybache's repository](https://github.com/emilybache/GildedRose-Refactoring-Kata).*
 
 ## Text-Based Approval Testing
