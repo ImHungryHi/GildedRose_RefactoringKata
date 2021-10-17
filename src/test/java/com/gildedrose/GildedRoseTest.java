@@ -40,4 +40,27 @@ class GildedRoseTest {
             () -> assertEquals(GildedRose.MAX_QUALITY, app.items[2].quality)
         );
     }
+
+    @Test
+    void should_Increment_OnceIfSellInPositive_TwiceIfSellInNegative_WhenAgedBrieRipens() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Aged Brie", 2, 0),
+            new Item("Aged Brie", 1, 0),
+            new Item("Aged Brie", 0, 0),
+            new Item("Aged Brie", -1, 0)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertAll(
+            () -> assertEquals(1, app.items[0].quality),
+            () -> assertEquals(1, app.items[1].quality),
+            () -> assertEquals(2, app.items[2].quality),
+            () -> assertEquals(2, app.items[3].quality)
+        );
+    }
 }
