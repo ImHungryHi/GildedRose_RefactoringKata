@@ -82,4 +82,19 @@ class GildedRoseTest {
             () -> assertEquals(GildedRose.MAX_QUALITY, app.items[1].quality)
         );
     }
+
+    @Test
+    void should_KeepSameSellIn_WhenSulfurasRipens() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Sulfuras, Hand of Ragnaros", 2, 40)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertEquals(2, app.items[0].sellIn);
+    }
 }
