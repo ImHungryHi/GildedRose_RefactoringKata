@@ -137,4 +137,23 @@ class GildedRoseTest {
             () -> assertEquals(19, app.items[2].quality)
         );
     }
+
+    @Test
+    void should_DecrementQualityTwice_WhenSellInReached() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Candy bar", 0, 40),
+            new Item("Milk", -1, 30)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertAll(
+            () -> assertEquals(38, app.items[0].quality),
+            () -> assertEquals(28, app.items[1].quality)
+        );
+    }
 }
