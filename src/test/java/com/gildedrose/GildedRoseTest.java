@@ -97,4 +97,23 @@ class GildedRoseTest {
         // Then
         assertEquals(2, app.items[0].sellIn);
     }
+
+    @Test
+    void should_Keep80Quality_WhenSulfurasRipens() {
+        // Given
+        Item[] items = new Item[] {
+            new Item("Sulfuras, Hand of Ragnaros", 2, 80),
+            new Item("Sulfuras, Hand of Ragnaros", 2, 40)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When
+        app.updateQuality();
+
+        // Then
+        assertAll(
+            () -> assertEquals(80, app.items[0].quality),
+            () -> assertEquals(80, app.items[1].quality)
+        );
+    }
 }
