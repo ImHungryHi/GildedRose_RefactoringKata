@@ -2,6 +2,7 @@
 
 *Chris' note: This Kata was sourced from Emily Bache's repository, which you can find in [this link](https://github.com/emilybache/GildedRose-Refactoring-Kata).*
 *The rest is as described in the source material - apart from the solution in the GildedRose and GildedRoseTest classes.*
+*Emily's readme reads as follows:*
 
 This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/).
 
